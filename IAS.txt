@@ -1,0 +1,71 @@
+--- GERAL ---
+
+-> 1000 paalavras de 40 bits de memória
+-> Instruções de 20 bits e Inteiros de 40 bits
+    -> Em uma palavra pode ter 2 Instruções ou 1 Inteiro
+    Uma palavra de instrução:
+        -> Bits do 0 - 7 para opcode (8 bits)
+        -> Outros 8 - 19 bits para endereço (12 bits)
+        -> Bits do 20 - 27 para opcode (8 bits)
+        -> Outros 28 - 39 bits para endereço (12 bits)
+    Uma palavra de Inteiro:
+        -> Bit 0 para o sinal (Sinal de Magnitude)
+        -> Outros 1 - 39 bits para valor do inteiro
+-> Sistema mono programado
+    -> Executa um programa por vez
+
+--- ESTRUTURAS ---
+
+-> Memória Principal
+-> Equipamentos de Entraada e Saída 
+-> Processador
+    -> Unidadde Lógica e Aritimética
+        -> Onde serãao feitos os calculos matemáticos
+    -> Unidade de Controle
+        -> Onde as decisões serãaao tomadas
+
+--- INSTRUÇÕES DO IAS ---
+
+-> Transferencia de Dados
+    Mais Importantes:
+    -> LOAD M(Endereço) = transfere o valor na mamória pra o acumulador (AC)
+    -> STOR M(Endereço) = transfere o valor no acumulador (AC) para o endereço de memória
+-> Desvio Incondicional
+    Independente do valor no acumulador (AC) é pulado para a instrução no JUMP
+    -> JUMP M(Endereço, 0:19)
+    -> JUMP M(Endereço, 20:39)
+-> Desvio Condicional
+    Se o valor no acumulador (AC) for < 0 é pulado para a instrução no JUMP
+    -> JUMP+M(Endereço, 0:19)
+    -> JUMP+M(Endereço, 20:39)
+-> Aritimética
+    Mais Importantes:
+    -> ADD M(Endereço)
+    -> SUB M(Endereço)
+    -> MUL M(Endereço)
+    -> DIV M(Endereço)
+
+--- REGISTRADORES ---
+
+PC 
+    -> Contém o ENDEREÇO da proxima instrução a ser pego da memória
+    -> Possui 12 bits
+MBR 
+    -> Tem acesso ao processador a memória e a entrada e saida do computador
+    -> Quando o processador conversa com a memória a instrução é passada prlo MBR, isso ocorre com a E/S também
+MAR 
+    -> Registrador de endereço de memória
+    -> Especifica o endereço na memória da palavra a ser escrita ou lida no MBR
+    -> Onde fica operando da instrução
+    -> Possui 12 bits
+IR 
+    -> Contém o código da operação
+    -> O opcode de 8 bits
+IBR
+    -> Guarda a instrução que sera feita depois da primeira em uma linha
+    -> Possui 20 bits
+AC e MQ 
+    -> Registradores temporarios para valores de operandos e resultados de operações
+    -> Possui 40 bits
+
+ 
