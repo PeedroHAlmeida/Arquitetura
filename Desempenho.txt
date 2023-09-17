@@ -1,0 +1,40 @@
+Melhorias na frequência dos clocks dos processadores
+Melhorias nas latências de memória 
+Novas tecnicas de uso de memória, como a memória chache
+Aumento no número dos núcleos dos processadores
+Processadores baseados no conceito de threads
+
+-> Previsão de desvio
+    -> Definir possiveis trilhas de execução a partir de informações históricas dos desvios
+-> Análise de fluxos de Dados
+    -> Escalonar instruções para melhor a ocupação de unidades funcionais dos processadores
+-> Execução especulativa
+    -> Permitir a execução de instruções em modo temporário baseada na predição de desvios e análise de
+    fluxo de dados. Caso a execução tenha seguido uma previsão errada, o trabalho é desfeito
+
+--- Alternativas para o problema ---
+
+-> Aumentar o número de bits recuperados e a largura do barramento
+-> Uso de caches no sistema ou buffers na interface da memória
+    -> A cache diminui a conversa com a memória principal
+-> Uso de sistemas de cache mais complexos para minimizar o acesso a memória principal
+-> Usar a hierarquia de barramentos para permitir um barramento mais veloz entre a memória principal e
+a CPU
+-> Melhoras nos sistemas de E/S para diminuir a interferência na execução de programas
+
+--- Intel & ARM ---
+
+-> Intel x86 - microprocessadores de propósito geral
+    -> Baseado nas arquiteturas de conjunto de instruções CISC
+    -> Manteve a compatibilidade com o software ao longo do tempo
+    -> Oferece mais facilidade para a implementação dos compiladores
+    -> Lider em data centers e computadores pessoais
+-> ARM - Sistemas embarcados
+    -> Líder em ambientes embarcados
+    -> Baseado nas arquitetura de conjunto de instruções RISC
+    -> Projetados para atender três categorias:
+        -> Sistemas embarcados em tempo real 
+        -> Plataformas de aplicativos
+        -> Aplicações seguras 
+
+    
