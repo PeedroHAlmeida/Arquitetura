@@ -1,0 +1,72 @@
+--- Introdução a Organização e Arquitetura de Computadores ---
+
+01) Qual é, em termos gerais, a distinção entre a organização e a arquitetura do computador?
+
+R: A arquitetura se preocupa com o conjunto de instruções e parametros que são visiveis ao programador,
+já a organização lida com a parte lógica e física da máquina
+
+02) Qual é, em termos gerais, a distinção entre a estrutura e a função do computador?
+
+R: A estrutura de um computador lida com o a organização dos computadores, com as peças do computador 
+(CPU, Memória, HD e outros), como é feito a comunicação dos componentes, já a função do computador é a 
+capacidade de resolver uma ampla quantidade de tarefas e operações com base no desempenho do hardware e 
+software
+
+03) Quais são as quatro funções principais de um computador?
+
+Processamento de dados
+Armazenamento de dados
+Movimentação de dados
+Controle
+
+04) Liste e defina resumidamente os principais componentes estruturais de um computador.
+
+CPU - Unidade onde são feitos os cauculos e o controle dos hardwares
+Memória Principal - Armazenamento de dados temporários
+Entrada e saída - Movimentação de dados externo para interno ou interno para externo na máquina
+Interconexão de sistema - Mecanismo que comunica processador, memória e E/S do computador (barramento de 
+sistema)
+
+05) Liste e defina resumidamente os principais componentes estruturais de um processador
+
+Unidade de Controle - Controla operações
+Unidade Lógica e aritimética - Faz operações, onde é feito o processamento dos dados
+Registradores - armazenamento interno do processador
+Intercoxão - Comunicação entre CPU, ULA e Registradores
+
+--- Evolução e desempenho do computador ---
+
+01) O que é um computador de programa armazenado?
+
+R: Um programa armazenado é um conjunto de instruções que pode ser armazenado na memória 
+
+02) Quais são os quatro componentes principais de qualquer computador de uso geral?
+
+Processador (CPU)
+Memória
+Entrada e saída
+Armazenamento
+
+03) No nível de circuito integrado, quais são os três constituintes principais de um sistema de 
+computação?
+
+CPU
+Multiplexador
+Memória
+
+04) Explique a lei de Moore
+
+R: A lei de Moore fez com que os chips produzidos tivessem uma maior produtividade em relação ao tempo e 
+diminuindo a quantidadde de transitores, fazendo com que o valor de mercado diminuísse 
+
+05) Liste e explique as principais características de uma família de computadores.
+
+R: Conjunto de instruções semelhantes ou idênticos, que faria que um programa em uma maquina tenha o 
+mesmo resultado em outra. Sistema operacional semelhante ou idêntico, fazendo com que os controles 
+consigam se entender. Velocidade aumentada, com mais operações por unidade de tempo. Número cada vez 
+maior de E/S, aumentando a comunicação. Tamanho de memória crescente, aumentando o armazenamento 
+temporário. Maior custo, junto com a maior qualidade de máquina
+
+06) Qual é a principal característica que distingue um microprocessador?
+
+R: Fazer cálculos e operações em um único circuito integrado

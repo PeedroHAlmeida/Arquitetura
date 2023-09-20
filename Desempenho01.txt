@@ -1,8 +1,18 @@
 Melhorias na frequência dos clocks dos processadores
 Melhorias nas latências de memória 
-Novas tecnicas de uso de memória, como a memória chache
+Novas tecnicas de uso de memória, como a memória cache
 Aumento no número dos núcleos dos processadores
 Processadores baseados no conceito de threads
+
+-> Primeiro ponto para saber o desempenho é saber qual é o critério a ser avaliado para avaliarmos (métrica)
+    Métricas de desmpenho:
+    -> Tempo de resposta (tempo de execução)
+        -> Uma das mais importantes
+        -> Requisições por unidade de tempo 
+
+-> Impacto no desempenho:
+    -> Trocar o processador por uma versão mais rápida
+    -> Adicionar mais processadores
 
 -> Previsão de desvio
     -> Definir possiveis trilhas de execução a partir de informações históricas dos desvios
@@ -20,6 +30,8 @@ Processadores baseados no conceito de threads
 -> Uso de sistemas de cache mais complexos para minimizar o acesso a memória principal
 -> Usar a hierarquia de barramentos para permitir um barramento mais veloz entre a memória principal e
 a CPU
+    -> Fazer com que os programas mais lentos (maior ciclo de clock) fiquem em um barramento em quanto
+    os mais rapidos (menor ciclo de clock) fiquem em outro barramento
 -> Melhoras nos sistemas de E/S para diminuir a interferência na execução de programas
 
 --- Intel & ARM ---
@@ -32,7 +44,7 @@ a CPU
 -> ARM - Sistemas embarcados
     -> Líder em ambientes embarcados
     -> Baseado nas arquitetura de conjunto de instruções RISC
-    -> Projetados para atender três categorias:
+    Projetados para atender três categorias:
         -> Sistemas embarcados em tempo real 
         -> Plataformas de aplicativos
         -> Aplicações seguras 

@@ -1,0 +1,14 @@
+-> Interconexão é uma ligação entre os modulos do sistema, ou seja, os barramentos de sistema
+    Formam o barramento de sistema:
+        -> Linhas de dados
+            -> Quando queremos passar uma valor no registrador do processador para a mamória é passado pelo barramento de dados, assim como para um despositivo de E/S e outros
+            -> Larguar do barraento é dado pelo numero de linhas. 32bits, 64bits...
+            -> Se a CPU for de 64bits e a largura do barramento de dados for 32bits é preciso de dois acessoas a memóra para o processador ler a instrução
+        -> Linhas de endereço
+            -> Larguar do barraento é dado pelo numero de linhas. 32bits, 64bits...
+        -> Linhas de controle
+            -> Controla o acesso e utilização das linhas de dados e endereço
+            -> Operações de leitura e escrita de dados
+            
+            
+    
