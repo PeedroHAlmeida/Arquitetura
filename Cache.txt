@@ -1,0 +1,155 @@
+--- Memória Cache ---
+
+-> A memória do computador é organizada em uma hierarquia. No nível maisalto (mais perto do processador), estão os registradores do 
+processador. Em seguida, vêm um ou mais níveis de cache. Quando são usados múltiplos níveis, eles são indicados por L1, L2 e assim 
+por diante. Em seguida, vem a memória principal, que normalmente é uma memória dinâmica de acesso aleatório e dinâmico (DRAM). Todos 
+estes são considerados internos ao sistema de computação. A hierarquia continua com a memória externa, com o próximo nível geralmente 
+sendo um disco rígido fixo, e um ou mais níveis abaixo disso consistindo em mídia removível, como discos ópticos e fita.
+
+-> À medida que descemos na hierarquia da memória, encontramos custo/bit menor, capacidade maior e tempo de acesso mais lento. Seria 
+bom usar apenas a memória mais rápida, mas, como ela é a memória mais cara, trocamos tempo de acesso pelo custo, usando mais da 
+memória mais lenta. O desafio de projeto é organizar os dados e os programas na memória de modo que as palavras de memória acessadas 
+normalmente estejam na memória mais rápida.
+
+-> Em geral, é provável que a maioria dos acessos futuros à memória principal, feitos pelo processador, seja para locais acessados 
+recentemente. Assim, a cache retém automaticamente uma cópia de algumas das palavras usadas recentemente, vindas das DRAM. Se a 
+memória cache for projetada corretamente, então, na maior parte do tempo, o processador solicitará palavras da memória que já estão 
+na cache.
+
+-> Hierarquia de subsistemas de memória
+    -> Internas ao sistema 
+        -> Acessíveis diretamente pelo processador (Cache está aqui!)
+    -> Externas ao sistema
+        -> Acessíveis pelo processador por meio de um módulo de E/S
+
+-> O termo localização indica se a memória é interna ou externa ao computador
+-> A memória interna normalmente significa a memória principal
+
+--- Métodos de acesso ---
+
+Acesso sequencial
+    -> O acesso é feito em uma sequência linear específica. A informação de endereçamento armazenada é usada para separar 
+    registros e auxiliar no processo de recuperação. Um mecanismo compartilhado de leitura-escrita é usado, e este precisa ser movido 
+    do seu local atual para o local desejado, passando e rejeitando cada registro intermediário. Assim, o tempo para acessar um 
+    registro qualquer é altamente variável
+    -> Memória organizada em registrosque são separados por endereços
+    -> Mecanismo de leitura e escrita é compartilhado
+    -> Tempo de leitura/escrita é variável
+        -> Exemplo de Acesso Sequencial são as fitas magnéticas
+
+Acesso direto
+    -> Assim como o acesso sequencial, o acesso direto envolve um mecanismo compartilhado de leitura-escrita compartilhado. Porém, os 
+    blocos ou registros individuais têm um endereço exclusivo, baseado no local físico. O acesso é realizado pelo acesso direto, para 
+    alcançar uma vizinhança geral, mais uma busca sequencial, contagem ou espera, até alcançar o local final. Novamente, o tempo de 
+    acesso é variável.
+    -> Memória organizada em registrosque são separados por endereços
+    -> Cada registro tem um endereço único, baseado na sua localização física
+    -> Em uma leitura/escrita, o cabeçote de leitura se posiciona próximo ao registro desejado
+        -> Exemplo de Acesso Direto são os discos rigidos
+
+Acesso aleatório
+    -> Cada local endereçável na memória tem um mecanismo de endereçamento exclusivo, fisicamente interligado. O tempo para acessar 
+    determinado local é independente da sequência de acessos anteriores e é constante. Assim, qualquer local pode ser selecionado 
+    aleatoriamente, e endereçado e acessado diretamente. A memória principal e alguns sistemas de cache são de acesso aleatório.
+    -> Cada posição de memória possui um endereço fisicamente conectado a ela
+    -> O acesso a qualquer posição é constante e independente de acessos anteriores
+    -> Mesmo tempo para acessar quaalquer posição aleatória de mamória
+        -> Exemplo de Acesso Aleatório são as memórias RAM
+
+Acesso Associativo
+    -> esse é o tipo de memória de acesso aleatório que permite fazer uma comparação de um certo número de bit desejados dentro de 
+    uma palavra para uma combinação especificada, e faz isso para todas as palavras simultaneamente. Assim, uma palavra é recuperada 
+    com base em uma parte de seu conteúdo, em vez do seu endereço. As memórias cache podem empregar o acesso associativo.
+    -> Ocorre comparação de um pedaço de uma string de busca com todos os registros na memória
+    -> A leitura ocorre com base na busca por parte da string, e não pelo endereço
+    -> Quem decide a parte da string a ser buscada é o key register
+        -> Bastante utilizado em Chaches
+
+--- Desempenho ---
+
+Tempo de acesso (latência)
+    -> Para a memória de acesso aleatório, esse é o tempo gasto para realizar uma operação de leitura ou escrita, ou seja, o tempo 
+    desde o instante em que um endereço é apresentado à memória até o instante em que os dados foram armazenados ou se tornaram 
+    disponíveis para uso. Para a memória de acesso não aleatório, o tempo de acesso é o tempo gasto para posicionar o mecanismo de 
+    leitura-escrita no local desejado
+
+Tempo de ciclo de memória
+    -> Esse conceito é aplicado principalmente à memória de acesso aleatório, e consiste no tempo de acesso mais qualquer tempo 
+    adicional antes que um segundo acesso possa iniciar. Esse tempo adicional pode ser exigido para a extinção de transientes nas 
+    linhas de sinal ou para a regeneração de dados, se eles forem lidos destrutivamente
+
+Taxa de transferência
+    -> Essa é a taxa em que os dados podem ser transferidos para dentro ou fora de uma unidade de memória. Para a memória de acesso 
+    aleatório, ela é igual a 1/(tempo de ciclo).
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+-> Em uma memória volátil, a informação se deteriora naturalmente ou se perde quando a energia elétrica é desligada. Em uma memória
+não volátil, a informação uma vez gravada permanece sem deterioração até que seja deliberadamente mudada; nenhuma energia elétrica é 
+necessária para reter a informação
+
+-> As memórias com superfície magnética são não voláteis. A memória semicondutora pode ser volátil ou não. A memória não apagável não 
+pode ser alterada, exceto destruindo-se a unidade de armazenamento. A memória semicondutora desse tipo é conhecida como memória 
+somente de leitura (ROM, do inglês read-only memory). Inevitavelmente, uma memória prática não apagável também precisa ser não volátil
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--- Hierarquia de memória ---
+
+As restrições de projeto sobre a memória de um computador podem ser resumidas por três questões: Quanto? Com que velocidade? Com que 
+custo?
+
+-> A questão da quantidade é, de certa forma, livre. Se houver capacidade, as aplicações provavelmente serão desenvolvidas para 
+utilizá-la.
+-> A questão da velocidade, de certa forma, é mais fácil de responder. Para conseguir maior desempenho, a memória precisa ser capaz 
+de acompanhar a velocidade do processador. Ou seja, enquanto o processador está executando instruções, não gostaríamos que ele 
+tivesse que parar, aguardando por instruções ou operandos.
+-> A questão final também precisa ser considerada. Para um sistema prático, o custo da memória deve ser razoável em relação a outros 
+componentes.
+
+-> A memória externa, não volátil, também é chamada de memória secundária ou memória auxiliar.
+-> Estas são usadas para armazenar arquivos de programa e dados e, normalmente, são visíveis ao programador apenas em termos de 
+arquivos e registros, ao contrário de bytes ou palavras individuais. O disco também é usado para oferecer uma extensão à memória 
+principal, conhecida como memória virtual
+
+-> Basicamente, a memória virtual é uma facilidade que permite que os programas enderecem a memória a partir de um ponto de vista 
+lógico, sem considerar a quantidade de memória principal disponível fisicamente. Quando a memória virtual é usada, os campos de 
+endereço das instruções de máquina contêm endereços virtuais. Para leituras e escritas da memória principal, uma unidade de 
+gerenciamento da memória física traduz cada endereço virtual para um endereço físico na memória principal
+
+--- Endereços de cache ---
+
+-> Uma vantagem óbvia da cache lógica é que a velocidade de acesso a ela é maior do que para uma cache física, pois a cache pode 
+responder antes que a MMU realize uma tradução de endereço. A desvantagem é que a maioria dos sistemas de memória virtual fornece, a 
+cada aplicação, o mesmo espaço de endereços de memória virtual. Ou seja, cada aplicação vê uma memória virtual que começa no endereço 
+0. Assim, o mesmo endereço virtual em duas aplicações diferentes refere-se a dois endereços físicos diferentes. A memória cache, 
+portanto, precisa ser completamente esvaziada a cada troca de contexto de aplicação, ou então bits extras precisam ser adicionados a 
+cada linha da cache para identifi car a que espaço de endereço virtual esse endereço se refere. (Assunto um pouco mais complexo)
+
+--- Função de mapeamento ---
+
+-> Como existem menos linhas de cache do que blocos da memória principal, é necessário haver um algoritmo para mapear os blocos da 
+memória principal às linhas de cache.
+-> É preciso haver um meio para determinar qual bloco da memória principal atualmente ocupa uma linha da cache. A escolha da função de mapeamento dita como a cache é organizada. 
+Três técnicas podem ser utilizadas
+-> Direta
+    i = quantidade de linhas de cache
+    x = endereço na memória principal
+    x % i = linha da cache que sera aramazenada (% = módulo)
+    -> Se temos 8 linhas de cache e queremos descobrir onde que a linha 9 de memória princiapal será aramazenada fazemos o cálculo   
+    9 % 8, que é igual a 1, então o dado da linha 9 será armazenada na linha 1 da cache
+    -> A técnica de mapeamento direto é simples e pouco dispendiosa para se implementar. Sua principal desvantagem é que existe um 
+    local de cache fixo para cada bloco. Assim, se um programa referenciar palavras repetidamente de dois blocos diferentes, mapeados 
+    para a mesma linha, então os blocos serão continuamente trocados na cache, e a razão de acerto será baixa
+    -> Constitui em três campos: Tag, linha de cache (set) e linha de memória princiapal (palavra)
+-> Associativa
+    -> Pega a primeira linha de cache vaga para armazenamento
+    -> Verifica se a Tag já esta presente na cache antes de fazer a inserção, se estiver não é necessário inserir novamente, já se 
+    não estiver é inserido em uma linha aleatória
+    -> Constitui em dois campos: Tag e linha de memória princiapal (palavra)
+-> Associativa em 
+    -> A cache é dividida em conjuntos assim como a memória principal
+    -> É basicamente uma "mistura" de mapeamento direto com associativo, tendo de diferença que no cado do mapeamento direto é usado um bit para saber a linha de cache da inserção e no associativo o bit é para o conjunto
+    -> Constitui em três campos: Tag, conjunto de cache (set) e linha de memória princiapal (palavra)
+
+
