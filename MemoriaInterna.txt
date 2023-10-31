@@ -29,7 +29,8 @@ escrever algo novo nela.
 nunca precisam ser carregados de um dispositivo de armazenamento secundário.
 
 Problemas
--> A etapa de inserção de dados inclui um custo fixo relativamente grande, não importa se são fabricadas uma ou milhares de cópias de determinada ROM.
+-> A etapa de inserção de dados inclui um custo fixo relativamente grande, não importa se são fabricadas uma ou milhares de cópias de 
+determinada ROM.
 -> Não há espaço para erro. Se um bit estiver errado, o lote inteiro de ROM precisa ser descartado.
 
 --- DRAM Síncrona ---

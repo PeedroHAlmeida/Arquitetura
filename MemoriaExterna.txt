@@ -1,0 +1,50 @@
+-> Os discos magnéticos continuam sendo os componentes mais importantes da memória externa. Tanto os discos removíveis quanto os 
+fixos, ou rígidos, são usados em sistemas que vão desde desde computadores pessoais a mainframes e supercomputadores.
+
+-> Para conseguir maior desempenho e maior disponibilidade, servidores e sistemas de grande porte utilizam tecnologia de disco RAID. 
+RAID é uma família de técnicas para utilização de múltiplos discos como um array paralelo de dispositivos de armazenamento de dados, 
+com a redundância embutida para compensar a falha futura
+
+--- RAIDs ---
+
+-> RAID é um conjunto de unidades de discos físicos, vistas pelo sistema operacional como uma única unidade lógica.
+-> Os dados são distribuídos pelos discos físicos de um array em um esquema conhecido como intercalação de dados (striping)
+-> A capacidade de disco redundante é usada para armazenar informações de paridade, o que garante a facilidade de recuperação dos 
+dados no caso de uma falha de disco.
+-> A estratégia RAID emprega várias unidades de disco e distribui os dados de modo que permita o acesso simultâneo aos dados a partir 
+das várias unidades, melhorando assim o desempenho de E/S e permitindo aumentos na capacidade de modo mais fácil
+
+RAID 0
+    -> Não é um membro verdadeiro RAID
+    -> Não possui redundância (por isso não é considerado RAID) e isso diminui o desempenho
+    -> Dados divididos entre discos
+    -> Confiabilidade baixa, se der problema os dados sõa perdidos
+
+RAID 1
+    -> Duplica as informações que serão salvas, tendo conjuntos espelhados
+    -> Caso algum corrompa, há um "backup" salvo
+
+RAID 2
+    -> Utiliza o código de Haming de redundância
+    -> Possui N discos com log2(N) = M discos de redundância
+
+RAID 3
+    -> Possui N discos com apenas mais 1 disco de redundância independente do valor de N
+    -> Em falha de um disco, a paridade permite recuperá-lo
+    -> Função de paridade (OU Exclusivo)
+    -> Somente uma E/S por vez, pode causar perda de desmpenho com taxas altas
+
+RAID 4
+    -> Bom para altas taxas de requisição de E/S
+    -> Possui N discos com apenas mais 1 disco de redundância independente do valor de N
+    -> Função de paridade (OU Exclusivo)
+    -> Diferente do RAID 3, que a redundancia é feita mo disco todo, no RAID 4 é feita apenas na parte perdida do disco
+
+RAID 5
+    -> Bom para altas taxas de requisição de E/S
+    -> redundância espahda pelos discos
+    -> Igual ao RAID 4 porém a redundancia é dividida pelos discos
+
+RAID 6
+    -> Bom para altas taxas de requisição de E/S
+    -> Igual ao RAID porém há uma cópia a mais das reduncia, aumentando o desempenho
