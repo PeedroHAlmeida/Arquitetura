@@ -1,0 +1,39 @@
+-> As duas formas básicas de memória de acesso aleatório semicondutora são a RAM dinâmica (DRAM) e a RAM estática (SRAM). A SRAM é 
+mais rápida, mais cara e menos densa que a DRAM, e é usada para a memória cache. A DRAM é usada para a memória principal.
+
+-> As técnicas de correção de erro normalmente são usadas nos sistemas de memória. Estas envolvem a inclusão de bits redundantes que 
+sejam uma função dos bits de dados, para formar um código de correção de erro. Se ocorrer um erro de bit, o código detectará e, 
+normalmente, corrigirá o erro.
+
+-> Para compensar a velocidade relativamente baixa da DRAM, diversas organizações avançadas de DRAM foram introduzidas. As duas mais 
+comuns são a DRAM síncrona e a DRAM RamBus. Ambas envolvem o uso do clock do sistema para proporcionar a transferência de blocos de 
+dados.
+
+--- DRAM e SRAM ---
+
+-> O mais comum é conhecido como memória de acesso aleatório (RAM).  Uma característica distinta da RAM é a possibilidade de ler 
+dados da memória e escrever novos dados na memória de modo fácil e rápido. Tanto a leitura quanto a escrita são realizadas por meio 
+de sinais elétricos
+
+-> Outra característica distinta da RAM é que ela é volátil. Uma RAM precisa receber uma fonte de alimentação constante. Se a energia 
+for interrompida, os dados são perdidos. Assim, a RAM só pode ser usada como armazenamento temporário. As duas formas tradicionais de 
+RAM usadas nos computadores são DRAM e SRAM
+
+--- ROM ---
+
+-> Uma memória somente de leitura contém um padrão permanente de dados, que não pode ser mudado. Uma ROM é não volátil, ou seja, 
+nenhuma fonte de energia é necessária para manter os valores dos bits na memória. Embora seja possível ler uma ROM, não é possível 
+escrever algo novo nela.
+
+-> Para um requisito de tamanho moderado, a vantagem da ROM é que os dados ou programa estão permanentemente na memória principal e 
+nunca precisam ser carregados de um dispositivo de armazenamento secundário.
+
+Problemas
+-> A etapa de inserção de dados inclui um custo fixo relativamente grande, não importa se são fabricadas uma ou milhares de cópias de determinada ROM.
+-> Não há espaço para erro. Se um bit estiver errado, o lote inteiro de ROM precisa ser descartado.
+
+--- DRAM Síncrona ---
+
+-> Uma das formas mais utilizadas de DRAM é a DRAM síncrona. Diferente da DRAM tradicional, que é assíncrona, a SDRAM troca dados com 
+o processador sincronizado com um sinal de clock externo e executando na velocidade plena do barramento do processador/memória, sem 
+imposição de estados de espera
