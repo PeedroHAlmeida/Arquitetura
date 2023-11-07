@@ -12,7 +12,7 @@
         -> Bit 0 para o sinal (Sinal de Magnitude)
         -> Outros 1 - 39 bits para valor do inteiro
 -> Sistema mono programado
-    -> Executa um programa por vez
+    -> Executa um programa por vez 
 
 --- ESTRUTURAS ---
 

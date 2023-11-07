@@ -1,0 +1,21 @@
+1) Os três formatos de instruções MIPS (R, I e J) forem feitos para atender diferentes necessidades de programação e otimização de hardware, tento uma arquitetura mais eficiente e versátil. Cada um dos formatos possui caracteristicas e utilizações especificas, proporcionando flexibilidade e desempenho nas mais diversas aplicações
+
+2) Tipo R:
+    -> Opcode (6 bits): Especifica a operação a ser executada. Códigos de operação diferente correspondem a diferentes operações, como adição, subtração, lógica, etc.
+    -> Rs (5 bits): Identifica o registrador de origem número 1.
+    -> Rt (5 bits): Identifica o registrador de origem número 2.
+    -> Rd (5 bits): Identifica o registrador de destino, onde o resultado da operação será armazenado.
+    -> Shift (5 bits): Especifica o número de bits para realizar um deslocamento (rotação ou deslocamento lógico) nos dados.
+    -> Funct (6 bits): Determina a função específica da operação. Junto com o campo Opcode, define a instrução completa.
+
+Tipo I:
+    -> Opcode (6 bits): Especifica a operação a ser executada, semelhante ao campo Opcode no formato R.
+    -> Rs (5 bits): Identifica o registrador de origem número 1.
+    -> Rt (5 bits): Identifica o registrador de origem número 2.
+    -> Immediate (16 bits): Contém um valor imediato, como uma constante ou deslocamento, que é usado como operando na instrução. Isso permite a realização de operações em valores imediatos.
+
+Tipo J:
+    -> Opcode (6 bits): Define a operação de salto (geralmente o valor é 2).
+    -> Adress (26 bits): O campo de endereço no formato J não é tratado da mesma forma que os campos nos formatos R e I. É usado para especificar o endereço de destino do salto, geralmente usado em saltos incondicionais. Contém o endereço de destino da instrução de salto. Isso permite que o programa execute um salto incondicional para o endereço especificado.
+
+3) O uso do campo Funct na instrução de tipo R faz com que a arquitetura acomode uma variedade de funções específicas dentro de uma categoria de operação mais ampla, como aritmética. Isso economiza espaço de código e permite que o processador seja mais eficiente em sua execução.
