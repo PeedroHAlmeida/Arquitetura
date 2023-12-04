@@ -1,0 +1,17 @@
+Quanto mais modos de endereçamento a arquitetura oferece
+-> mais poder ela da ao programador (compilador)
+-> mais complexa tornaa-se a busca de operandos
+-> mais ciclos de instruções podem ser necessarios para a execução de instrução 
+-> RISC (poucos modos de endereçamento) maior faacilidaade de emplementar o Hardware 
+-> CISC (muitos modos) maior facilidde de implementara o Software
+    Obs: o CISC tem proposito de faacilitar a vida do programador
+
+Modos basicos de endereçamento (principais)
+-> Imediato
+-> Direto a memoria
+-> Indireto a memoria
+-> Direto de registrador
+-> Indireto de registrador
+-> Deslocamento
+-> Pilha
+

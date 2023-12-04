@@ -1,0 +1,67 @@
+Um SO é um conjunto de softwres que controla a execução dos programas aplicaativos e atua como uma 
+interface entre usuáario e o hardware do computador. Ele pode ser imaginado como tendo dois objetivos:
+
+O SO propoe quanto ao uso do sistema computacional: conveniencia e eficiencia
+
+-> O SO é implementado em software. Entao, ele compartilha a CPU
+-> Deve deixar o controle do sistema para a execuçao de outros programas
+-> Escalona os programas a serem executados
+
+--- Escalonamnto --- 
+
+Preempitivo 
+    -> Provoca uma interrupção forçada no processador para que outro possa usar a CPU
+Não Preempitivo 
+    -> Faz com que o programa que esta sendo executado na CPU continue sendo executado, ignora a outra 
+    chamada de uso do processador
+
+    --- Batch (Lote) --- 
+
+    First-Come First-Served
+        -> Primeiro que chega é o primeiro a ser escalonado
+        -> Não Preempitivo
+        -> Ineficiente quando ha processos que demoram na sua execuçao 
+        -> Sistema em fila
+
+    Shortest Job First
+        -> Escolhe as tarefas mais curtas como prioridade, jobs curtos
+        -> Não Preempitivo
+        -> Menor turnaround
+        -> Ineficiente em casos onde possuem muitos jobs curtos, pois ha a possibilidade das tarefas 
+        maiores nao serem executadas (inaninação)
+
+    Shortest Remaining Time Next
+        -> Preempitivo
+        -> Seleciona o job que tem o tempo restante menor que os outros
+        -> Mesmo problema do de cima (inaninação)
+
+--- Gerenciamento de Memória ---
+
+-> O GM monitora quais partes da memória estao em uso e quais estao disponiveis
+-> Processo de transferir dados entre a memória principal (RAM) e o armazenamento secundário, como um 
+disco rígido, quando a RAM atinge sua capacidade máxima. (Swapping)
+
+Alocação estatica 
+    -> Divisão da memória em N partições fixas de tamanhos diferentes (segmentos de memória). Os jobs 
+    (programas/tarefas) são alocados na menor partição capaz de armazená-lo
+    -> Fragmentação interna = patições de sobra = memória perdida = problema
+    -> Fragmentação externa = se vc tem dois espaços livres ma MP sendo um de 25KB e outro de 100KB não 
+    contíguas (separadas) e então é preciso alocar um processo de 110KB. Não sera possivel = problema
+
+Alocação dinamica 
+    
+    -> O tamanho de partições são ajustados de acordo com as necessidades dos processos = melhor que a 
+    estatica
+    -> No caso de Fragmentação interna na alocação estatica na dinamica esse espaço de memoria perdido é 
+    transformado em uma nova lacuda de memoria podendo ser utilizada novamente não tendo disperdicio de 
+    memoria (realocação dinamica de endereço)
+    -> Permite a utilização do swapping
+
+        Best-Fit = Utiliza a lacuna que possuir a menor sobra (procura o espaço mais proximo do tamanho do 
+        processo)
+        Worst-Fit = Utiliza a lacuna que possuir a maior sobra (procura o maior espaço possivel)
+        First-Fit = Utiliza a primeira lacuna com tamanho suficiente (procura o primeo espaço cabivel para 
+        o processo) mais eficiente pois se achar um possivel ja nao se preocupa com os outros
+        Circular-Fit = Igual ao fist-fit mas comeca as buscas a partir da ultima sobra de lacuna, ou seja, 
+        pode começar a busca pelo meio da memoria (pouco inferior ao fist-fit em eficiencia)
+
