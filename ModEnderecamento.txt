@@ -15,3 +15,12 @@ Modos basicos de endereçamento (principais)
 -> Deslocamento
 -> Pilha
 
+--- CPU ---
+
+Organização do processador
+
+-> Buscar instruções
+-> Interpretar instrução
+-> Obter dados
+-> Processar dados
+-> Gravar dados
