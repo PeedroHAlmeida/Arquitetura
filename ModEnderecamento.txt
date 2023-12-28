@@ -24,3 +24,16 @@ Organização do processador
 -> Obter dados
 -> Processar dados
 -> Gravar dados
+
+Pipeline passos
+
+Funciona melhor no RISC do que no CISC
+
+-> Buscar instruções
+-> Decodificar instrução
+-> Calcular operandos
+-> Obter operandos
+-> Executar instrução
+-> Escrever operandos
+
+
